@@ -9,14 +9,14 @@ export default function MovieReviews() {
   const [error, setError] = useState(false);
   const [reviews, setReviews] = useState([]);
 
-  const searchId = useParams();
+  const movieId = useParams();
 
   useEffect(() => {
     async function getData() {
       try {
         setIsLoading(true);
         setError(false);
-        const data = await getReviewsMovieById(searchId.moviesId);
+        const data = await getReviewsMovieById(movieId.moviesId);
         setReviews(data);
       } catch (error) {
         setError(true);
@@ -26,7 +26,7 @@ export default function MovieReviews() {
     }
 
     getData();
-  }, [searchId]);
+  }, [movieId]);
 
   return (
     <div>
