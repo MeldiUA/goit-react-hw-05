@@ -1,0 +1,20 @@
+.containerCard {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.backgrContainer {
+  min-width: 220px;
+  min-height: 400px;
+  max-width: 220px;
+  max-height: 400px;
+
+  overflow: hidden;
+}
+
+.backgrMovie {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
