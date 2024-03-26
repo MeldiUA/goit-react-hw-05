@@ -19,14 +19,14 @@ export default function MovieDetailsPage() {
   const location = useLocation();
   const backLinkRef = useRef(location.state ?? '/');
 
-  const searchId = useParams();
+  const { moviesId } = useParams();
 
   useEffect(() => {
     async function getData() {
       try {
         setIsLoading(true);
         setError(false);
-        const data = await getMovieById(searchId.moviesId);
+        const data = await getMovieById(moviesId);
         setMovie(data);
       } catch (error) {
         setError(true);
@@ -35,7 +35,7 @@ export default function MovieDetailsPage() {
       }
     }
     getData();
-  }, [searchId]);
+  }, [moviesId]);
 
   return (
     <div>
